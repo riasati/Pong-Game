@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
     public float speed;
     public float upScreenEdge;
     public float downScreenEdge;
+    public GameManagerScript gm;
 
     public GameObject opponent;
     // Start is called before the first frame update
@@ -18,6 +19,10 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gm.freezeGame == true)
+        {
+            return;
+        }
         Movement();
     }
 
